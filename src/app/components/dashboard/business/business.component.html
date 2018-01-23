@@ -1,0 +1,80 @@
+<!-- <mat-card class="allert">
+    <strong>Attention!</strong> your email is not verifyed
+</mat-card> -->
+<div class="box">
+
+    <mat-card>
+        <mat-card-title>SIGN UP BUSINESS</mat-card-title>
+        <form #form="ngForm" class="example-container">
+            <mat-form-field>
+                <input ngModel name="name" matInput placeholder="Entity Name" required>
+
+            </mat-form-field>
+            <mat-form-field>
+                <span matPrefix>+27 &nbsp;</span>
+                <input ngModel name="phone" type="tel" matInput placeholder="Phone Number" required>
+                <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select [(ngModel)]="regQue" name="regQue" placeholder="Registered?" required>
+                    <mat-option [value]="'Yes'">
+                        Yes
+                    </mat-option>
+                    <mat-option [value]="'No'">
+                        No
+                    </mat-option>
+                </mat-select>
+
+            </mat-form-field>
+
+            <mat-form-field *ngIf="regQue === 'Yes'">
+                <input ngModel name="regnumber" matInput placeholder="Registration Number" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" placeholder="Category" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <textarea ngModel name="address" matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="8" required></textarea>
+                <mat-hint>Street Name, Zip Code, Suburb, City </mat-hint>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <input ngModel name="operation" type="text" matInput placeholder="Operation Period" required>
+                <mat-hint>In Months</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <textarea ngModel name="services" matInput placeholder="List of Services" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="8" required></textarea>
+                <mat-hint>One Service per line</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea ngModel name="description" matInput placeholder="Entety Description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="8" required></textarea>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <input ngModel name="website" type="text" matInput placeholder="Website" required>
+                <mat-hint>www.mycompany.com</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <input ngModel name="facebook" type="text" matInput placeholder="Facebook" required>
+                <mat-hint>Facebook Page/ Profile</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+                <input ngModel name="instagram" type="text" matInput placeholder="Instagram" required>
+            </mat-form-field>
+            <mat-form-field class="list">
+                <input ngModel name="twitter" type="text" matInput placeholder="Twitter" required>
+            </mat-form-field>
+
+            <button [ladda]="isLoading" [disabled]="!form.valid" mat-raised-button type="button" (click)="addBusiness(form)">SUBMIT</button>
+            <br>
+
+            <!-- <div *ngIf='error' style="color:red;margin-top:20px;">
+                <strong>Oops!</strong> User with same email already exist.
+            </div> -->
+        </form>
+    </mat-card>
+</div>

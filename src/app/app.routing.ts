@@ -2,17 +2,17 @@ import { AuthGuard } from './auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ProfileComponent, RegisterComponent, HomeComponent, LoginComponent} from './components';
+import { RegisterComponent, LoginComponent} from './components';
 
-//  { path: '',  loadChildren: './components#ComponentModule'}
+//  { path: '',  }
 
 const routes: Routes = [
-   { path: '',  component: LoginComponent},
+   { path: '',  loadChildren: './components/dashboard#DashboardModule', canActivate: [AuthGuard]},
 
 
 {path: 'login', component: LoginComponent },
 { path: 'register', component: RegisterComponent},
-// { path: 'components',  loadChildren: './components#ComponentModule'},
+{ path: 'dashboard',  loadChildren: './components/dashboard#DashboardModule', canActivate: [AuthGuard]},
 ];
 
 @NgModule({

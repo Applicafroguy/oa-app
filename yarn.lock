@@ -411,6 +411,12 @@ amqplib@^0.5.2:
     readable-stream "1.x >=1.1.9"
     safe-buffer "^5.0.1"
 
+angular2-ladda@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/angular2-ladda/-/angular2-ladda-1.2.3.tgz#f912b107aab036e132fa8c9eee39bf48e665cc10"
+  dependencies:
+    ladda "^1.0.5"
+
 angularfire2@^5.0.0-rc.4:
   version "5.0.0-rc.4"
   resolved "https://registry.yarnpkg.com/angularfire2/-/angularfire2-5.0.0-rc.4.tgz#65c4d2ed768c3251b0b611ce51d6b42ac8afeabc"
@@ -4045,6 +4051,12 @@ labeled-stream-splicer@^2.0.0:
     isarray "~0.0.1"
     stream-splicer "^2.0.0"
 
+ladda@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/ladda/-/ladda-1.0.5.tgz#3fc33066516615c0bc73d3740d12e31a554a57da"
+  dependencies:
+    spin.js "^2.0.0"
+
 lazy-cache@^0.2.3:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-0.2.7.tgz#7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65"
@@ -4594,6 +4606,17 @@ negotiator@0.6.1:
 netmask@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
+
+ng2-completer@^1.2.2:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/ng2-completer/-/ng2-completer-1.6.3.tgz#b12c902b786f685c6b1256dd87d746e2abf2e505"
+
+ng2-smart-table@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ng2-smart-table/-/ng2-smart-table-1.2.2.tgz#1b84d517a62a7982ecca699d3a8dee0a3b122666"
+  dependencies:
+    lodash "^4.17.4"
+    ng2-completer "^1.2.2"
 
 no-case@^2.2.0:
   version "2.3.2"
@@ -6621,6 +6644,10 @@ spdy@^3.4.1:
     safe-buffer "^5.0.1"
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
+
+spin.js@^2.0.0:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-2.3.2.tgz#6caa56d520673450fd5cfbc6971e6d0772c37a1a"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

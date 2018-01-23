@@ -1,0 +1,7 @@
+<h1>Profile </h1>
+<div *ngIf='profile'>
+    <pre>{{profile |  json }}</pre>
+</div>
+<div *ngIf='!profile'>
+    Please wait while we load your Profile
+</div>

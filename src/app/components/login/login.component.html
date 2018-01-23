@@ -10,9 +10,9 @@
                 <input ngModel name="password" type="password" matInput placeholder="Password" required>
             </mat-form-field>
 
-            <button [disabled]="!form.valid" mat-raised-button type="button" (click)="login(form)">LOGIN</button>
+            <button [ladda]="isLoading" [disabled]="!form.valid" mat-raised-button type="button" (click)="login(form)">LOGIN</button>
             <br>
-            <button [color]="'accent'" mat-raised-button type="button" class="signup">SIGN UP</button>
+            <button [routerLink]="['/register']" [disabled]="isLoading" [color]="'accent'" mat-raised-button type="button" class="signup">SIGN UP</button>
             <div *ngIf='error' style="color:red;margin-top:20px;">
                 <strong>Oops!</strong> Invalid email or password.
             </div>

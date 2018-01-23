@@ -1,0 +1,19 @@
+<nav>
+    <mat-toolbar [color]="'primary'">
+        <span>OA App</span>
+        <span class="fill-remaining-space"></span>
+        <mat-menu #appMenu="matMenu">
+            <button (click)="toProfile()" mat-menu-item> Profile </button>
+            <button [routerLink]="['/clients']" mat-menu-item> Clients </button>
+            <button [routerLink]="['/login']" (click)="logout()" mat-menu-item> Logout </button>
+        </mat-menu>
+
+        <button mat-icon-button mat-raised-button [color]="'accent'" [matMenuTriggerFor]="appMenu">
+           <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+</nav>
+<main>
+    <router-outlet>
+    </router-outlet>
+</main>

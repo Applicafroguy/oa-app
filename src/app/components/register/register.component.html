@@ -1,3 +1,23 @@
-<p>
-  register works!
-</p>
+<div class="box">
+    <mat-card>
+
+        <mat-card-title>REGISTER</mat-card-title>
+        <form #form="ngForm" class="example-container">
+            <mat-form-field>
+                <input ngModel name="email" matInput placeholder="Email" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input ngModel name="password" type="password" matInput placeholder="Password" required>
+            </mat-form-field>
+
+
+
+            <button [ladda]="isLoading" [disabled]="!form.valid" mat-raised-button type="button" (click)="register(form)">REGISTER</button>
+            <br>
+            <button [routerLink]="['/login']" [disabled]="isLoading" [color]="'accent'" mat-raised-button type="button" class="signup">SIGN IN</button>
+            <div *ngIf='error' style="color:red;margin-top:20px;">
+                <strong>Oops!</strong> User with same email already exist.
+            </div>
+        </form>
+    </mat-card>
+</div>

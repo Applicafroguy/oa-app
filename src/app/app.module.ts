@@ -1,3 +1,6 @@
+import { DataService } from './service/data.service';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { DashboardModule } from './components/dashboard/dashboard.module';
 import { AppRoutingModule } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -5,7 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ProfileComponent, RegisterComponent, HomeComponent, LoginComponent} from './components';
+import { RegisterComponent, LoginComponent} from './components';
 
 // import Material Design
 import {MatToolbarModule, MatFormFieldModule, MatInputModule, MatCardModule,
@@ -15,6 +18,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/Firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './service/auth.service';
+import { LaddaModule } from 'angular2-ladda';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAUnWViy2fL_0ab-oEYtpCeJQaaGb6Gkpc',
@@ -24,6 +30,7 @@ const firebaseConfig = {
   storageBucket: 'oa-data.appspot.com',
   messagingSenderId: '929072613375'
 };
+
 
 @NgModule({
   declarations: [
@@ -35,7 +42,6 @@ const firebaseConfig = {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
@@ -44,11 +50,13 @@ const firebaseConfig = {
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
+    AngularFireModule.initializeApp(firebaseConfig, 'OA APP'),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
+    DashboardModule,
+    LaddaModule
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [AuthGuard, AuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
